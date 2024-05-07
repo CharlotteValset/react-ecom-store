@@ -3,3 +3,28 @@
   line-height: 1.5;
   font-weight: 400;
 }
+
+.nav-icon svg {
+  color: #3a457f;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-icon:hover svg {
+  color: rgb(96, 96, 252);
+}
+
+.cart-icon {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-icon span {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  background-color: rgb(195, 52, 0);
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 10px;
+}

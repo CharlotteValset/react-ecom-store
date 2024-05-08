@@ -2,15 +2,26 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  background-color: #fbfbfb;
+}
+
+.jost-logo-text {
+  font-family: "Jost", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .nav-icon svg {
-  color: #3a457f;
-  transition: color 0.3s ease-in-out;
+  color: #030712;
+  transition: color 0.2s ease-in-out;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
 }
 
 .nav-icon:hover svg {
-  color: rgb(96, 96, 252);
+  color: #d211b8;
 }
 
 .cart-icon {
@@ -22,9 +33,22 @@
   position: absolute;
   top: -3px;
   right: -3px;
-  background-color: rgb(195, 52, 0);
+  background-color: #a00e8c;
   color: white;
   border-radius: 50%;
   padding: 2px 6px;
   font-size: 10px;
+}
+
+.textSize-18 {
+  font-size: 18px !important;
+  font-weight: 400;
+}
+
+button {
+  font-size: 38px;
+}
+
+button:hover {
+  background-color: #d211b8;
 }

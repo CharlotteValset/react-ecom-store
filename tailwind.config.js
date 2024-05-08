@@ -8,12 +8,9 @@ export default {
     extend: {
       colors: {
         "background-white": "#FBFBFB",
-        purple: "#E7CEFF",
+        "purple-pink": "#a00e8c;",
         "light-pink": "#e2d5e2",
         "dark-pink": "#9E5269",
-        "blue-gray": "#7581AF",
-        "coral-pink": "#FFE8EF",
-        "light-yellow": "#FFFFD2",
       },
     },
   },

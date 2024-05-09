@@ -8,7 +8,7 @@ export const ContactForm = () => {
       <div className="m-auto max-w-2xl py-6">
         <form className="w-5/6 max-w-sm mx-auto">
           <div className="mb-5">
-            <label for="fullName" className="block mb-2 text-lg text-gray-900 dark:text-white">
+            <label htmlFor="fullName" className="block mb-2 text-lg text-gray-900 dark:text-white">
               Full name
             </label>
             <input
@@ -19,7 +19,7 @@ export const ContactForm = () => {
             />
           </div>
           <div className="mb-5">
-            <label for="email" className="block mb-2 text-lg text-gray-900 dark:text-white">
+            <label htmlFor="email" className="block mb-2 text-lg text-gray-900 dark:text-white">
               Email
             </label>
             <input
@@ -30,7 +30,7 @@ export const ContactForm = () => {
             />
           </div>
           <div className="mb-5">
-            <label for="subject" className="block mb-2 text-lg text-gray-900 dark:text-white">
+            <label htmlFor="subject" className="block mb-2 text-lg text-gray-900 dark:text-white">
               Subject
             </label>
             <input
@@ -41,13 +41,13 @@ export const ContactForm = () => {
             />
           </div>
           <div>
-              <label for="message" class="block mb-2 text-lg text-gray-900 dark:text-white">
+              <label htmlFor="message" className="block mb-2 text-lg text-gray-900 dark:text-white">
                 Your message
               </label>
               <textarea
                 id="message"
                 rows="4"
-                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 border border-gray-400 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 border border-gray-400 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               ></textarea>
           </div>
           <div className="flex justify-center mt-8">

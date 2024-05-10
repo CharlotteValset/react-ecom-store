@@ -1,12 +1,12 @@
 import { Header } from "./Header";
 import { Footer } from "./Footer";
-import { ProductDetails } from "../Pages/ProductPage"
+import { ProductCard } from "../../components/Card"
 
 export const Layout = () => {
   return (
     <div>
       <Header />
-      <ProductDetails />
+      <ProductCard />
       <Footer />
     </div>
   );

@@ -68,7 +68,7 @@ export const ProductDetails = () => {
                 4.0
               </span>
             </div>
-            <div className="flex md:flex-col justify-between">
+            <div className="flex md:flex-col items-center justify-between">
               <div>
                 <span className="text-xl md:text-xl font-bold text-gray-900 pe-4 dark:text-white">$599</span>
                 <span className="text-xl md:text-xl line-through text-gray-500 font-extralight dark:text-white">$498</span>

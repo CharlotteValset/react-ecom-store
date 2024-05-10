@@ -1,12 +1,12 @@
 import { Header } from "./Header";
 import { Footer } from "./Footer";
-import { CheckoutSuccess } from "../Pages/CheckoutSuccessPage"
+import { ProductDetails } from "../Pages/ProductPage"
 
 export const Layout = () => {
   return (
     <div>
       <Header />
-      <CheckoutSuccess />
+      <ProductDetails />
       <Footer />
     </div>
   );

@@ -11,6 +11,7 @@ export default {
         "purple-pink": "#a00e8c;",
         "light-pink": "#e2d5e2",
         "dark-pink": "#9E5269",
+        "dark-gray": "#1F2020",
       },
       screens: {
         sm: "616px",

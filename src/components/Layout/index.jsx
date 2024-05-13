@@ -1,12 +1,14 @@
 import { Header } from "./Header";
 import { Footer } from "./Footer";
-import { CheckoutSuccess } from "../../components/Pages/CheckoutSuccessPage";
+import { ProductCard } from "../Card";
+import { SearchBar } from "../../components/SearchBar";
 
 export const Layout = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <CheckoutSuccess />
+      <SearchBar />
+      <ProductCard />
       <Footer />
     </div>
   );

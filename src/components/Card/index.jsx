@@ -5,7 +5,7 @@ export const ProductCard = () => {
   return (
     <>
       <div className="mt-20 flex flex-wrap gap-8 max-w-5xl mx-auto px-9">
-        <div className="mt-62 mx-auto w-5/6 md:w-80 lg:w-72 shadow-xl bg-white">
+        <div className="mt-62 mx-auto w-full sm:w-64 shadow-xl bg-white">
           <div className="flex flex-col">
             <div className="">
               <img className="w-full h-64 object-cover" src={Watch} alt="product image" />
@@ -79,7 +79,7 @@ export const ProductCard = () => {
             </div>
           </div>
         </div>
-        <div className="mt-62 mx-auto w-5/6 md:w-80 lg:w-72 shadow-xl bg-white">
+        <div className="mt-62 mx-auto w-full sm:w-64 shadow-xl bg-white">
           <div className="flex flex-col">
             <div className="">
               <img className="w-full h-64 object-cover" src={Dress} alt="product image" />
@@ -153,7 +153,7 @@ export const ProductCard = () => {
             </div>
           </div>
         </div>
-        <div className="mt-62 mx-auto w-5/6 md:w-80 lg:w-72 shadow-xl bg-white">
+        <div className="mt-62 mx-auto w-full sm:w-64 shadow-xl bg-white">
           <div className="flex flex-col">
             <div className="">
               <img className="w-full h-64 object-cover" src={Dress} alt="product image" />
@@ -227,7 +227,7 @@ export const ProductCard = () => {
             </div>
           </div>
         </div>
-        <div className="mt-62 mx-auto w-5/6 md:w-80 lg:w-72 shadow-xl bg-white">
+        <div className="mt-62 mx-auto w-full sm:w-64 shadow-xl bg-white">
           <div className="flex flex-col">
             <div className="">
               <img className="w-full h-64 object-cover" src={Dress} alt="product image" />
@@ -301,7 +301,7 @@ export const ProductCard = () => {
             </div>
           </div>
         </div>
-        <div className="mt-62 mx-auto w-5/6 md:w-80 lg:w-72 shadow-xl bg-white">
+        <div className="mt-62 mx-auto w-full sm:w-64 shadow-xl bg-white">
           <div className="flex flex-col">
             <div className="">
               <img className="w-full h-64 object-cover" src={Dress} alt="product image" />
@@ -375,7 +375,7 @@ export const ProductCard = () => {
             </div>
           </div>
         </div>
-        <div className="mt-62 mx-auto w-5/6 md:w-80 lg:w-72 shadow-xl bg-white">
+        <div className="mt-62 mx-auto w-full sm:w-64 shadow-xl bg-white">
           <div className="flex flex-col">
             <div className="">
               <img className="w-full h-64 object-cover" src={Dress} alt="product image" />

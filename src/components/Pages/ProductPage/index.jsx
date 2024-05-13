@@ -6,7 +6,7 @@ export const ProductDetails = () => {
       <a>
         <p className=" mt-20 ms-6 xl:ms-32 text-gray-950 hover:text-pink-500 cursor-pointer">&lt; Back</p>
       </a>
-      <div className="mx-auto w-5/6 max-w-4xl">
+      <div className="mx-auto w-5/6 max-w-7xl">
         <div className="flex flex-col md:justify-center mt-6 md:flex-row">
           <div className="md:w-full">
             <img className="" src={Watch} alt="product image" />
@@ -68,10 +68,12 @@ export const ProductDetails = () => {
                 4.0
               </span>
             </div>
-            <div className="flex md:flex-col items-center justify-between">
+            <div className="flex md:flex-col items-center md:items-start justify-between">
               <div>
                 <span className="text-xl md:text-xl font-bold text-gray-900 pe-4 dark:text-white">$599</span>
-                <span className="text-xl md:text-xl line-through text-gray-500 font-extralight dark:text-white">$498</span>
+                <span className="text-xl md:text-xl line-through text-gray-500 font-extralight dark:text-white">
+                  $498
+                </span>
               </div>
               <a
                 href="#"

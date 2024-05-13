@@ -4,7 +4,8 @@ import { Footer } from "./Footer";
 import { Hero } from "../Hero";
 import { ProductCard } from "../Card";
 import { SearchBar } from "../../components/SearchBar";
-
+import { ProductDetails } from "../Pages/ProductPage";
+import { CheckoutSuccess } from "../Pages/CheckoutSuccessPage";
 
 export const Layout = () => {
   return (
@@ -13,6 +14,8 @@ export const Layout = () => {
       <Hero />
       <SearchBar />
       <ProductCard />
+      <ProductDetails />
+      <CheckoutSuccess />
       <Footer />
     </div>
   );

@@ -1,7 +1,8 @@
 export const SearchBar = () => {
   return (
     <>
-      <form className="flex items-center max-w-sm mx-auto mt-24">
+      <p className="text-xl text-center mt-10 text-dark-gray">Find what you are looking for</p>
+      <form className="flex items-center max-w-sm mx-auto mt-4">
         <label htmlFor="simple-search" className="sr-only">
           Search
         </label>

@@ -12,6 +12,11 @@ export default {
         "light-pink": "#e2d5e2",
         "dark-pink": "#9E5269",
       },
+      screens: {
+        sm: "616px",
+        md: "725px",
+        // => @media (min-width: 576px) { ... }
+      },
     },
   },
   plugins: [flowbite.plugin()],

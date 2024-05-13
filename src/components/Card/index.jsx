@@ -1,10 +1,10 @@
 import Dress from "../../assets/images/dress.jpg";
-import Watch from "../../assets/images/watch.jpg"
+import Watch from "../../assets/images/watch.jpg";
 
 export const ProductCard = () => {
   return (
     <>
-      <div className="mt-20 flex flex-wrap gap-8 max-w-5xl mx-auto px-9">
+      <div className="mt-20 flex flex-wrap gap-8 max-w-7xl mx-auto px-9">
         <div className="mt-62 mx-auto w-full sm:w-64 shadow-xl bg-white">
           <div className="flex flex-col">
             <div className="">

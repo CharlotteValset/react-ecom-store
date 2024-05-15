@@ -5,7 +5,7 @@ export const HeaderNav = () => {
 
   return (
     <nav className="bg-background-white fixed w-full z-10 top-0 start-0 border-gray-200 dark:bg-gray-900">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <div className="max-w-screen-lg flex flex-wrap items-center justify-between mx-auto p-4">
         <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <span className="self-center text-4xl text-gray-950 jost-logo-text whitespace-nowrap dark:text-white">
             Vivance

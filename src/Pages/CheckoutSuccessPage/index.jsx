@@ -1,4 +1,4 @@
-export const CheckoutSuccess = () => {
+export const CheckoutSuccessPage = () => {
   return (
     <>
       <div className="flex flex-col flex-grow ">

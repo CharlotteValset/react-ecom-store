@@ -1,6 +1,6 @@
 import Watch from "../../assets/images/watch.jpg";
 
-export const ProductDetails = () => {
+export const ProductPage = () => {
   return (
     <>
       <a>

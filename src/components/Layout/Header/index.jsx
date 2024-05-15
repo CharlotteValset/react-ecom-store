@@ -1,9 +1,9 @@
-import { Navigation } from "../../Navigation"
+import { HeaderNav } from "../../Navigation/HeaderNav";
 
 export const Header = () => {
   return (
     <header>
-      <Navigation />
+      <HeaderNav />
     </header>
-  )
-}
+  );
+};

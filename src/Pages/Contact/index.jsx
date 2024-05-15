@@ -2,13 +2,13 @@ export const Contact = () => {
   return (
     <>
       <h1 className="text-4xl text-center text-purple-pink font-semibold mt-24 mb-5">Contact us</h1>
-      <p className="text-2xl text-gray-600 text-center font-light my-8 w-5/6 max-w-sm mx-auto">
+      <p className="text-2xl text-gray-600 text-center font-light my-4 w-5/6 max-w-sm mx-auto">
         Please let us know if theres is anything we can help you with!
       </p>
-      <div className="m-auto max-w-2xl py-6">
-        <form className="w-5/6 max-w-sm mx-auto">
+      <div className="py-6 flex justify-center">
+        <form className="w-5/6 max-w-xs">
           <div className="mb-5">
-            <label htmlFor="fullName" className="block mb-2 text-lg text-gray-900 dark:text-white">
+            <label htmlFor="fullName" className="block mb-1 text-lg text-gray-900 dark:text-white">
               Full name
             </label>
             <input
@@ -19,7 +19,7 @@ export const Contact = () => {
             />
           </div>
           <div className="mb-5">
-            <label htmlFor="email" className="block mb-2 text-lg text-gray-900 dark:text-white">
+            <label htmlFor="email" className="block mb-1 text-lg text-gray-900 dark:text-white">
               Email
             </label>
             <input
@@ -30,7 +30,7 @@ export const Contact = () => {
             />
           </div>
           <div className="mb-5">
-            <label htmlFor="subject" className="block mb-2 text-lg text-gray-900 dark:text-white">
+            <label htmlFor="subject" className="block mb-1 text-lg text-gray-900 dark:text-white">
               Subject
             </label>
             <input
@@ -40,8 +40,8 @@ export const Contact = () => {
               required
             />
           </div>
-          <div>
-            <label htmlFor="message" className="block mb-2 text-lg text-gray-900 dark:text-white">
+          <div className="">
+            <label htmlFor="message" className="block mb-1 text-lg text-gray-900 dark:text-white">
               Your message
             </label>
             <textarea

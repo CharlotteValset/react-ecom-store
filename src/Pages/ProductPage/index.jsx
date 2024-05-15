@@ -1,4 +1,4 @@
-import Watch from "../../../assets/images/watch.jpg";
+import Watch from "../../assets/images/watch.jpg";
 
 export const ProductDetails = () => {
   return (

@@ -1,13 +1,11 @@
-import { CartProduct } from "../../CartProduct";
+import { CartProduct } from "../../components/CartProduct";
 
-export const CheckoutPage = () => {
+export const ShoppingCart = () => {
   return (
     <>
       <div className="mt-24 flex flex-col sm:flex-row sm:max-w-screen-lg sm:mx-auto sm:gap-20">
         <section className="flex flex-col mx-auto">
           <h1 className="text-2xl text-center">Shopping cart</h1>
-          <CartProduct />
-          <CartProduct />
           <CartProduct />
         </section>
         <section className="my-4 mx-auto w-full max-w-72 h-32">

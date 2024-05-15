@@ -6,7 +6,7 @@ export const SearchBar = () => {
         <label htmlFor="simple-search" className="sr-only">
           Search
         </label>
-        <div className="flex flex-row w-80">
+        <div className="flex flex-row w-72 xs:w-96">
           <input
             type="text"
             id="simple-search"

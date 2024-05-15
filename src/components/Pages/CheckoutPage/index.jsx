@@ -10,7 +10,7 @@ export const CheckoutPage = () => {
           <CartProduct />
           <CartProduct />
         </section>
-        <section className="my-4 mx-auto w-1/2 max-w-72 h-32">
+        <section className="my-4 mx-auto w-full max-w-72 h-32">
           <div className="flex flex-row justify-between w-48 mx-auto">
             <h5 className="text-xl font-medium tracking-tight py-1 my-3 text-gray-900 dark:text-white">Your total</h5>
             <p className="text-xl font-normal py-1 my-3">$ 599</p>

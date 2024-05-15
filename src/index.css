@@ -40,6 +40,16 @@
   font-size: 10px;
 }
 
+.delete-icon svg {
+  color: #030712;
+  transition: color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.delete-icon:hover svg {
+  color: #d211b8;
+}
+
 .textSize-18 {
   font-size: 18px !important;
   font-weight: 400;

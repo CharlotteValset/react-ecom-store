@@ -12,8 +12,10 @@ export default {
         "light-pink": "#e2d5e2",
         "dark-pink": "#9E5269",
         "dark-gray": "#1F2020",
+        "pink-pink": "#d211b8",
       },
       screens: {
+        xs: "400px",
         sm: "616px",
         md: "725px",
         // => @media (min-width: 576px) { ... }

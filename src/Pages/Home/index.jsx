@@ -1,13 +1,13 @@
 import { Hero } from "../../components/Hero";
 import { SearchBar } from "../../components/SearchBar";
-import { Card } from "../../components/Card";
+import { ProductCard } from "../../components/ProductCard";
 
-export const Homepage = () => {
+export const Home = () => {
   return (
     <>
       <Hero />
       <SearchBar />
-      <Card />
+      <ProductCard />
     </>
   );
 };

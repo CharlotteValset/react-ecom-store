@@ -1,14 +1,16 @@
+import { Link } from "react-router-dom";
+
 export const HeaderNav = () => {
   const cartItemCount = 5;
 
   return (
     <nav className="bg-background-white fixed w-full z-10 top-0 start-0 border-gray-200 dark:bg-gray-900">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a className="flex items-center space-x-3 rtl:space-x-reverse">
+        <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <span className="self-center text-4xl text-gray-950 jost-logo-text whitespace-nowrap dark:text-white">
             Vivance
           </span>
-        </a>
+        </Link>
         <ul className="flex gap-4">
           <li className="nav-icon">
             <Link to="/">

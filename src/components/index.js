@@ -3,6 +3,7 @@ export { Hero } from "./Hero";
 export { Layout } from "./Layout";
 export { Loader } from "./Loader";
 export { ProductCard } from "./ProductCard";
+export { ReviewCard } from "./ReviewCard";
 export { QuantityCounter } from "./QuantityCounter";
 export { SearchBar } from "./SearchBar";
 export { FooterNav } from "./Navigation/FooterNav";

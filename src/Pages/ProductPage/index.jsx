@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { Loader } from "../../components/Loader";
+import { Loader, ReviewCard } from "../../components/index";
 import { useFetch } from "../../hooks/useFetch";
 import { apiUrl } from "../../common/constants";
 
@@ -20,6 +20,10 @@ export const ProductPage = () => {
     if (!product) {
       content = <div>Product not found</div>;
     } else {
+      //Price handling
+      const isDiscounted = product.price !== product.discountedPrice;
+      const discountAmount = (product.price - product.discountedPrice).toFixed(0);
+
       content = (
         <>
           <div className="flex flex-col flex-grow">
@@ -27,16 +31,13 @@ export const ProductPage = () => {
               <p className=" mt-20 ms-6 xl:ms-32 text-gray-950 hover:text-pink-500 cursor-pointer">&lt; Back</p>
             </a>
             <div className="mx-auto w-5/6 max-w-7xl">
-              <div className="flex flex-col md:justify-center mt-6 md:flex-row">
+              <section className="flex flex-col md:justify-center mt-6 md:flex-row">
                 <div className="mx-auto md:mx-0">
                   <img className="h-96 w-96 object-cover" src={product.image.url} alt={product.image.alt} />
                 </div>
                 <div className="py-5 md:pt-0 ms-8 ">
-                  <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                    {product.title}
-                  </h5>
-                  <p className="pt-2 pb-4">{product.description}</p>
-                  <div className="flex items-center mt-2.5 mb-5">
+                  <h5 className="text-xl font-semibold tracking-tight text-gray-90">{product.title}</h5>
+                  <div className="flex items-center my-3">
                     <span className="flex flex-row items-center bg-light-pink text-purple-pink text-xs font-semibold px-2 py-0.5 rounded">
                       {" "}
                       <svg
@@ -51,14 +52,25 @@ export const ProductPage = () => {
                       {product.rating}
                     </span>
                   </div>
-                  <div className="flex md:flex-col items-center md:items-start justify-between">
-                    <div>
-                      <span className="text-xl md:text-xl font-bold text-gray-900 pe-4 dark:text-white">
-                        {product.discountedPrice},-
+                  <p className="pt-2 pb-4 max-w-96">{product.description}</p>
+
+                  <div className="flex md:flex-col items-end md:items-start justify-between">
+                    <div className="flex flex-col gap-2">
+                      <span>
+                        {isDiscounted && (
+                          <span className="text-xl md:text-xl line-through text-gray-500 font-extralight dark:text-white">
+                            {product.price},-
+                          </span>
+                        )}
                       </span>
-                      <span className="text-xl md:text-xl line-through text-gray-500 font-extralight dark:text-white">
-                        {product.price},-
-                      </span>
+                      <div>
+                        <span className="text-xl md:text-xl font-bold text-gray-900 pe-4 dark:text-white">
+                          {product.discountedPrice},-
+                        </span>
+                        <span className="text-xl md:text-xl text-purple-pink font-light">
+                          {isDiscounted && <span>(You save {discountAmount},-)</span>}
+                        </span>
+                      </div>
                     </div>
                     <a
                       href="#"
@@ -68,7 +80,17 @@ export const ProductPage = () => {
                     </a>
                   </div>
                 </div>
-              </div>
+              </section>
+              <section className="mx-auto max-w-3xl">
+                <div className="ms-8">
+                  <h2 className="text-2xl font-medium tracking-tight text-gray-90 mt-4">Reviews</h2>
+                  {product.reviews && product.reviews.length > 0 ? (
+                    product.reviews.map((item) => <ReviewCard data={item} key={item.id} />)
+                  ) : (
+                    <p>No reviews yet on this product</p>
+                  )}
+                </div>
+              </section>
             </div>
           </div>
         </>

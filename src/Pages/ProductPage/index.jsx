@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Loader, ReviewCard } from "../../components/index";
 import { useFetch } from "../../hooks/useFetch";
 import { apiUrl } from "../../common/constants";
@@ -26,16 +26,18 @@ export const ProductPage = () => {
 
       content = (
         <>
-          <div className="flex flex-col flex-grow">
-            <a>
-              <p className=" mt-20 ms-6 xl:ms-32 text-gray-950 hover:text-pink-500 cursor-pointer">&lt; Back</p>
-            </a>
-            <div className="mx-auto w-5/6 max-w-7xl">
+          <div className="flex flex-col flex-grow mx-auto w-5/6 max-w-7xl">
+            <Link to="/">
+              <p className=" mt-20 ms-6 xl:ms-32 text-gray-950 hover:text-pink-500 hover:underline cursor-pointer">
+                &lt; Back
+              </p>
+            </Link>
+            <div className="">
               <section className="flex flex-col md:justify-center mt-6 md:flex-row">
                 <div className="mx-auto md:mx-0">
                   <img className="h-96 w-96 object-cover" src={product.image.url} alt={product.image.alt} />
                 </div>
-                <div className="py-5 md:pt-0 ms-8 ">
+                <div className="py-5 md:pt-0 md:ms-8 ">
                   <h5 className="text-xl font-semibold tracking-tight text-gray-90">{product.title}</h5>
                   <div className="flex items-center my-3">
                     <span className="flex flex-row items-center bg-light-pink text-purple-pink text-xs font-semibold px-2 py-0.5 rounded">
@@ -63,7 +65,7 @@ export const ProductPage = () => {
                           </span>
                         )}
                       </span>
-                      <div>
+                      <div className="flex flex-col md:flex-row">
                         <span className="text-xl md:text-xl font-bold text-gray-900 pe-4 dark:text-white">
                           {product.discountedPrice},-
                         </span>
@@ -82,7 +84,7 @@ export const ProductPage = () => {
                 </div>
               </section>
               <section className="mx-auto max-w-3xl">
-                <div className="ms-8">
+                <div className="">
                   <h2 className="text-2xl font-medium tracking-tight text-gray-90 mt-4">Reviews</h2>
                   {product.reviews && product.reviews.length > 0 ? (
                     product.reviews.map((item) => <ReviewCard data={item} key={item.id} />)

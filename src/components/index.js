@@ -6,5 +6,6 @@ export { ProductCard } from "./ProductCard";
 export { ReviewCard } from "./ReviewCard";
 export { QuantityCounter } from "./QuantityCounter";
 export { SearchBar } from "./SearchBar";
+export { SearchResult } from "./SearchResult";
 export { FooterNav } from "./Navigation/FooterNav";
 export { HeaderNav } from "./Navigation/HeaderNav";

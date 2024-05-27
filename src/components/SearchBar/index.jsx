@@ -1,8 +1,18 @@
-export const SearchBar = () => {
+import { useState } from "react";
+
+export const SearchBar = ({ onSearch }) => {
+  const [inputValue, setInputValue] = useState("");
+
+  const handleInputChange = (event) => {
+    const term = event.target.value;
+    setInputValue(term);
+    onSearch(term);
+  };
+
   return (
     <>
       <p className="text-xl text-center mt-10 text-dark-gray">Find what you are looking for</p>
-      <form className="flex items-center max-w-sm mx-auto mt-4">
+      <form className="flex items-center justify-center max-w-sm mx-auto mt-4" onSubmit={(e) => e.preventDefault()}>
         <label htmlFor="simple-search" className="sr-only">
           Search
         </label>
@@ -12,6 +22,8 @@ export const SearchBar = () => {
             id="simple-search"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm block w-full ps-3 p-2.5 "
             placeholder="Search"
+            value={inputValue}
+            onChange={handleInputChange}
             required
           />
           <button

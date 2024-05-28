@@ -3,10 +3,6 @@ import { useFetch } from "../../hooks/useFetch";
 import { apiUrl } from "../../common/constants";
 import { useState } from "react";
 
-const search = (data, term) => {
-  return data.filter((item) => item.title.toLowerCase().includes(term.toLowerCase()));
-};
-
 export const Home = () => {
   const { data, isLoading, hasError } = useFetch(apiUrl);
   const [searchTerm, setSearchTerm] = useState("");
@@ -14,8 +10,16 @@ export const Home = () => {
 
   const handleSearch = (term) => {
     setSearchTerm(term);
-    const filteredResults = search(data, term);
-    setSearchResults(filteredResults);
+    if (term.trim() === "") {
+      setSearchResults([]);
+    } else {
+      const filteredResults = search(data, term);
+      setSearchResults(filteredResults);
+    }
+  };
+
+  const search = (data, term) => {
+    return data.filter((item) => item.title.toLowerCase().includes(term.toLowerCase()));
   };
 
   let content;
@@ -31,11 +35,8 @@ export const Home = () => {
   return (
     <main>
       <Hero />
-      <SearchBar onSearch={handleSearch} />
-      <div className="mt-10 flex flex-wrap gap-8 max-w-7xl mx-auto px-9">
-        {" "}
-        {searchTerm ? searchResults.map((product) => <ProductCard data={product} key={product.id} />) : content}
-      </div>
+      <SearchBar onSearch={handleSearch} searchResults={searchResults} />
+      <div className="mt-10 flex flex-wrap gap-8 max-w-7xl mx-auto px-9">{content}</div>
     </main>
   );
 };

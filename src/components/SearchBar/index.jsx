@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { DisplaySearchResult } from "../DisplaySearchResult";
 
-export const SearchBar = ({ onSearch }) => {
+export const SearchBar = ({ onSearch, searchResults }) => {
   const [inputValue, setInputValue] = useState("");
 
   const handleInputChange = (event) => {
@@ -49,6 +50,13 @@ export const SearchBar = ({ onSearch }) => {
           </button>
         </div>
       </form>
+      <div>
+        {searchResults.length === 0 && inputValue.trim() !== "" ? (
+          <p className="mx-auto w-72 xs:w-96 px-1 py-2 text-sm">No results matched</p>
+        ) : (
+          searchResults.map((product) => <DisplaySearchResult data={product} key={product.id} />)
+        )}
+      </div>
     </>
   );
 };

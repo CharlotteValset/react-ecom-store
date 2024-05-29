@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const CheckoutSuccessPage = () => {
   return (
     <>
@@ -18,9 +20,9 @@ export const CheckoutSuccessPage = () => {
           Your order will be delivered in a few days
         </p>
         <div className="flex justify-center mb-8">
-          <a href="#" className=" text-white bg-gray-950 hover:bg-pink-500 font-medium text-sm px-3 py-2 text-center">
+          <Link to="/" className=" text-white bg-gray-950 hover:bg-pink-500 font-medium text-sm px-3 py-2 text-center">
             Continue shopping
-          </a>
+          </Link>
         </div>
       </div>
     </>

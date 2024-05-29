@@ -1,27 +1,55 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { CartProduct } from "../../components/CartProduct";
+import { useStore } from "../../hooks/useStore";
 
 export const ShoppingCart = () => {
+  const cart = useStore((state) => state.cart);
+  const totalPrice = cart.reduce((sum, product) => sum + product.discountedPrice * product.quantity, 0).toFixed(2);
+  const clearCart = useStore((state) => state.clearCart);
+  const navigate = useNavigate();
+
+  const handleCheckout = (event) => {
+    event.preventDefault();
+    if (cart.length === 0) {
+      alert("There are no items in  your cart!");
+    } else {
+      clearCart();
+      navigate("/checkoutSuccessPage");
+    }
+  };
+
   return (
-    <div className="mt-24 flex flex-col flex-grow sm:flex-row sm:max-w-screen-lg sm:mx-auto sm:gap-20">
-      <section className="flex flex-col mx-auto">
-        <h1 className="text-2xl text-center">Shopping cart</h1>
-        <CartProduct />
-      </section>
-      <section className="my-4 mx-auto w-full max-w-72 h-32">
-        <div className="flex flex-row justify-between w-48 mx-auto">
-          <h5 className="text-xl font-medium tracking-tight py-1 my-3 text-gray-900 dark:text-white">Your total</h5>
-          <p className="text-xl font-normal py-1 my-3">$ 599</p>
-        </div>
-        <div className="text-center mt-4">
-          <Link
-            to="checkoutSuccessPage"
-            className=" text-white bg-gray-950 hover:bg-pink-500 font-medium text-sm px-5 py-2.5 text-center"
-          >
-            Proceed to checkout
-          </Link>
-        </div>
-      </section>
-    </div>
+    <>
+      <h1 className="text-4xl text-center text-purple-pink font-semibold mt-20 mb-8">Shopping cart</h1>
+      <div className="flex flex-col flex-grow sm:flex-row sm:max-w-screen-lg sm:mx-auto sm:gap-20">
+        <section className="flex flex-col mx-auto">
+          {cart.length > 0 ? (
+            cart.map((product) => <CartProduct key={product.id} product={product} />)
+          ) : (
+            <div className="flex flex-col gap-3 justify-center items-center my-4 mx-auto w-72 h-28 shadow-xl bg-white">
+              <p className="tex">Your cart is empty</p>
+              <Link to="/" className="text-purple-pink hover:underline">
+                Continue shopping
+              </Link>
+            </div>
+          )}
+          <CartProduct />
+        </section>
+        <section className="my-4 mx-auto w-full max-w-72 h-32">
+          <div className="flex flex-row justify-between w-48 mx-auto">
+            <h5 className="text-xl font-medium tracking-tight py-1 my-3 text-gray-900 dark:text-white">Your total</h5>
+            <p className="text-xl font-normal py-1 my-3">$ {totalPrice}</p>
+          </div>
+          <div className="text-center mt-4">
+            <button
+              className=" text-white bg-gray-950 hover:bg-pink-500 font-medium text-sm px-5 py-2.5 text-center"
+              onClick={handleCheckout}
+            >
+              Proceed to checkout
+            </button>
+          </div>
+        </section>
+      </div>
+    </>
   );
 };

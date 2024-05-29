@@ -1,16 +1,22 @@
 import React, { useState } from "react";
+import { useStore } from "../../hooks/useStore";
 
-export const QuantityCounter = () => {
-  const [quantity, setQuantity] = useState(1);
+export const QuantityCounter = ({ quantity, productId }) => {
+  const [currentQuantity, setCurrentQuantity] = useState(quantity);
+  const updateQuantity = useStore((state) => state.updateQuantity); // Get the updateQuantity action from the store
 
   const decrementQuantity = () => {
-    if (quantity > 0) {
-      setQuantity(quantity - 1);
+    if (currentQuantity > 1) {
+      const newQuantity = currentQuantity - 1;
+      setCurrentQuantity(newQuantity);
+      updateQuantity(productId, newQuantity);
     }
   };
 
   const incrementQuantity = () => {
-    setQuantity(quantity + 1);
+    const newQuantity = currentQuantity + 1;
+    setCurrentQuantity(newQuantity);
+    updateQuantity(productId, newQuantity);
   };
 
   return (
@@ -35,8 +41,8 @@ export const QuantityCounter = () => {
           type="text"
           id="counter-input"
           className="flex-shrink-0 text-gray-900 dark:text-white border-0 bg-transparent text-sm font-normal focus:outline-none focus:ring-0 max-w-[2.5rem] text-center"
-          value={quantity}
-          onChange={(e) => setQuantity(parseInt(e.target.value) || 0)}
+          value={currentQuantity}
+          onChange={(e) => setCurrentQuantity(parseInt(e.target.value) || 0)}
           required
         />
         <button

@@ -1,12 +1,14 @@
 import { Link, useParams } from "react-router-dom";
 import { Loader, ReviewCard } from "../../components/index";
 import { useFetch } from "../../hooks/useFetch";
+import { useStore } from "../../hooks/useStore";
 import { apiUrl } from "../../common/constants";
 
 export const ProductPage = () => {
   let { id } = useParams();
 
   const { data, isLoading, hasError } = useFetch(apiUrl);
+  const addToCart = useStore((state) => state.addToCart);
 
   let content;
 
@@ -74,12 +76,13 @@ export const ProductPage = () => {
                         </span>
                       </div>
                     </div>
-                    <a
+                    <button
+                      onClick={() => addToCart(product)}
                       href="#"
                       className="md:w-52 md:mt-8 text-white bg-gray-950 hover:bg-pink-500 font-medium text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                     >
                       Add to cart
-                    </a>
+                    </button>
                   </div>
                 </div>
               </section>

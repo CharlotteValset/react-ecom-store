@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { useStore } from "../../../hooks/useStore";
 
 export const HeaderNav = () => {
-  const cartItemCount = 5;
+  const cartItemCount = useStore((state) => state.cartItemCount);
+  const loadCart = useStore((state) => state.loadCart);
+
+  useEffect(() => {
+    loadCart();
+  }, [loadCart]);
 
   return (
     <nav className="bg-background-white fixed w-full z-10 top-0 start-0 border-gray-200 dark:bg-gray-900">

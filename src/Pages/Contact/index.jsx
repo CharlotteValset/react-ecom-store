@@ -1,6 +1,8 @@
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { InfoMessage } from "../../components/InfoMessage";
 
 const schema = yup
   .object({
@@ -19,10 +21,15 @@ export const Contact = () => {
     reset,
   } = useForm({ resolver: yupResolver(schema) });
 
+  const [infoMessage, setInfoMessage] = useState("");
+
   const onSubmit = (data) => {
     console.log(data);
     reset();
-    alert("Your message was sent!");
+    setInfoMessage("Message sent! We'll be in touch soon.");
+    setTimeout(() => {
+      setInfoMessage("");
+    }, 4000);
   };
 
   return (
@@ -88,6 +95,7 @@ export const Contact = () => {
             ></textarea>
             <p className="text-sm text-purple-pink">{errors.messageBody?.message}</p>
           </div>
+          {infoMessage && <InfoMessage message={infoMessage} />}
           <div className="flex justify-center mt-8">
             <button
               type="submit"

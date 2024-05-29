@@ -1,6 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 import { CartProduct } from "../../components/CartProduct";
 import { useStore } from "../../hooks/useStore";
+import { useState } from "react";
+import { InfoMessage } from "../../components/InfoMessage";
 
 export const ShoppingCart = () => {
   const cart = useStore((state) => state.cart);
@@ -8,10 +10,15 @@ export const ShoppingCart = () => {
   const clearCart = useStore((state) => state.clearCart);
   const navigate = useNavigate();
 
+  const [infoMessage, setInfoMessage] = useState("");
+
   const handleCheckout = (event) => {
     event.preventDefault();
     if (cart.length === 0) {
-      alert("There are no items in  your cart!");
+      setInfoMessage("Please add items to your cart!");
+      setTimeout(() => {
+        setInfoMessage("");
+      }, 3000);
     } else {
       clearCart();
       navigate("/checkoutSuccessPage");
@@ -21,6 +28,7 @@ export const ShoppingCart = () => {
   return (
     <>
       <h1 className="text-4xl text-center text-purple-pink font-semibold mt-20 mb-8">Shopping cart</h1>
+      {infoMessage && <InfoMessage message={infoMessage} />}
       <div className="flex flex-col flex-grow sm:flex-row sm:max-w-screen-lg sm:mx-auto sm:gap-20">
         <section className="flex flex-col mx-auto">
           {cart.length > 0 ? (

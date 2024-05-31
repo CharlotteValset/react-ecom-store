@@ -25,8 +25,12 @@ export const ShoppingCart = () => {
     }
   };
 
+  const handleClearCart = () => {
+    clearCart();
+  };
+
   return (
-    <>
+    <main className="flex flex-col flex-grow">
       <h1 className="text-4xl text-center text-purple-pink font-semibold mt-20 mb-8">Shopping cart</h1>
       {infoMessage && <InfoMessage message={infoMessage} />}
       <div className="flex flex-col flex-grow sm:flex-row sm:max-w-screen-lg sm:mx-auto sm:gap-20">
@@ -43,21 +47,29 @@ export const ShoppingCart = () => {
           )}
           <CartProduct />
         </section>
-        <section className="my-4 mx-auto w-full max-w-72 h-32">
+        <section className="mt-1 mx-auto w-full max-w-72">
           <div className="flex flex-row justify-between w-48 mx-auto">
             <h5 className="text-xl font-medium tracking-tight py-1 my-3 text-gray-900 dark:text-white">Your total</h5>
             <p className="text-xl font-normal py-1 my-3">$ {totalPrice}</p>
           </div>
-          <div className="text-center mt-4">
+          <div className="text-center mt-4 flex flex-col gap-3">
             <button
               className=" text-white bg-gray-950 hover:bg-pink-500 font-medium text-sm px-5 py-2.5 text-center"
               onClick={handleCheckout}
             >
               Proceed to checkout
             </button>
+            {cart.length > 0 && (
+              <button
+                className=" text-gray-950 bg-white hover:bg-pink-500 hover:text-white border border-gray-950 hover:border-pink-500 font-medium text-sm px-5 py-2.5 text-center"
+                onClick={handleClearCart}
+              >
+                Clear cart
+              </button>
+            )}
           </div>
         </section>
       </div>
-    </>
+    </main>
   );
 };

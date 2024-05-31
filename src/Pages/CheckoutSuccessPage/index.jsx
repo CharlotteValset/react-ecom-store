@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 export const CheckoutSuccessPage = () => {
   return (
-    <>
-      <div className="flex flex-col flex-grow ">
+    <main className="flex flex-col flex-grow">
+      <section>
         <h1 className="text-4xl text-center text-purple-pink font-semibold mt-24 md:mt-44 mb-5">Checkout Success!</h1>
         <div className="flex justify-center">
           <svg xmlns="http://www.w3.org/2000/svg" width="84" height="84" fill="none" viewBox="0 0 24 24">
@@ -24,7 +24,7 @@ export const CheckoutSuccessPage = () => {
             Continue shopping
           </Link>
         </div>
-      </div>
-    </>
+      </section>
+    </main>
   );
 };

@@ -20,7 +20,7 @@ export const HeaderNav = () => {
         </Link>
         <ul className="flex gap-4">
           <li className="nav-icon">
-            <Link to="/">
+            <Link to="/" aria-label="Home">
               <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" viewBox="0 0 24 24">
                 <path
                   stroke="currentColor"
@@ -33,7 +33,7 @@ export const HeaderNav = () => {
             </Link>
           </li>
           <li className="nav-icon">
-            <Link to="/contact">
+            <Link to="/contact" aria-label="Contact">
               <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" viewBox="0 0 24 24">
                 <path
                   stroke="currentColor"
@@ -46,7 +46,7 @@ export const HeaderNav = () => {
             </Link>
           </li>
           <li className="relative nav-icon cart-icon">
-            <Link to="/shoppingCart">
+            <Link to="/shoppingCart" aria-label="Shopping cart">
               <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" viewBox="0 0 24 24">
                 <path
                   stroke="currentColor"

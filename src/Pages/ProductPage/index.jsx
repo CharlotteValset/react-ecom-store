@@ -3,7 +3,6 @@ import { Loader, ReviewCard } from "../../components/index";
 import { useFetch } from "../../hooks/useFetch";
 import { useStore } from "../../hooks/useStore";
 import { useState, useEffect } from "react";
-import { InfoMessage } from "../../components/InfoMessage";
 import { apiUrl } from "../../common/constants";
 
 export const ProductPage = () => {
@@ -12,21 +11,27 @@ export const ProductPage = () => {
   const { data, isLoading, hasError } = useFetch(apiUrl);
   const addToCart = useStore((state) => state.addToCart);
 
-  const [infoMessage, setInfoMessage] = useState("");
+  const [buttonText, setButtonText] = useState("Add to cart");
+  const [buttonColor, setButtonColor] = useState("bg-gray-950");
+  const [isItemAdded, setIsItemAdded] = useState(false);
 
   useEffect(() => {
-    let timer;
-    if (infoMessage) {
-      timer = setTimeout(() => {
-        setInfoMessage("");
+    let buttonTimer;
+    if (isItemAdded) {
+      buttonTimer = setTimeout(() => {
+        setButtonText("Add to cart");
+        setButtonColor("bg-gray-950");
+        setIsItemAdded(false);
       }, 3000);
     }
-    return () => clearTimeout(timer);
-  }, [infoMessage]);
+    return () => clearTimeout(buttonTimer);
+  }, [isItemAdded]);
 
   const handleAddToCart = (product) => {
     addToCart(product);
-    setInfoMessage("Item added to the cart!");
+    setButtonText("Added to cart!");
+    setButtonColor("bg-pink-500");
+    setIsItemAdded(true);
   };
 
   let content;
@@ -46,7 +51,7 @@ export const ProductPage = () => {
       const discountAmount = (product.price - product.discountedPrice).toFixed(0);
 
       content = (
-        <div className="flex flex-col flex-grow mx-auto w-5/6 max-w-7xl">
+        <div className="mx-auto w-5/6 max-w-7xl">
           <Link to="/">
             <p className=" mt-20 ms-6 xl:ms-32 text-gray-950 hover:text-pink-500 hover:underline cursor-pointer">
               &lt; Back
@@ -96,12 +101,10 @@ export const ProductPage = () => {
                   </div>
                   <button
                     onClick={() => handleAddToCart(product)}
-                    href="#"
-                    className="md:w-52 md:mt-8 text-white bg-gray-950 hover:bg-pink-500 font-medium text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    className={`md:w-52 md:mt-8 text-white ${buttonColor} hover:bg-pink-500 font-medium text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800`}
                   >
-                    Add to cart
+                    {buttonText}
                   </button>
-                  {infoMessage && <InfoMessage message={infoMessage} />}
                 </div>
               </div>
             </section>
@@ -122,7 +125,7 @@ export const ProductPage = () => {
   }
 
   return (
-    <main>
+    <main className="flex flex-col flex-grow">
       <section>{content}</section>
     </main>
   );

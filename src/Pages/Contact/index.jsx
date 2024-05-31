@@ -33,7 +33,7 @@ export const Contact = () => {
   };
 
   return (
-    <>
+    <main>
       <h1 className="text-4xl text-center text-purple-pink font-semibold mt-24 mb-5">Contact us</h1>
       <p className="text-2xl text-gray-600 text-center font-light my-4 w-5/6 max-w-sm mx-auto">
         Please let us know if theres is anything we can help you with!
@@ -49,6 +49,7 @@ export const Contact = () => {
                 required: true,
                 minLength: 3,
               })}
+              id="fullName"
               type="text"
               className=" bg-gray-50 border border-gray-400 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
             />
@@ -62,6 +63,7 @@ export const Contact = () => {
               {...register("email", {
                 required: true,
               })}
+              id="email"
               type="email"
               className=" bg-gray-50 border border-gray-400 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
             />
@@ -76,6 +78,7 @@ export const Contact = () => {
                 required: true,
                 minLength: 3,
               })}
+              id="subject"
               type="text"
               className="bg-gray-50 border border-gray-400 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
             />
@@ -90,6 +93,7 @@ export const Contact = () => {
                 required: true,
                 minLength: 3,
               })}
+              id="message"
               rows="4"
               className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 border border-gray-400 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             ></textarea>
@@ -106,6 +110,6 @@ export const Contact = () => {
           </div>
         </form>
       </div>
-    </>
+    </main>
   );
 };

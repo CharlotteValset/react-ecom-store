@@ -1,8 +1,13 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 export const CheckoutSuccessPage = () => {
   return (
     <main className="flex flex-col flex-grow">
+      <Helmet>
+        <title>Checkout Success! | Vivance</title>
+        <meta name="description" content="Checkout Success page at Vivance E-commerce store - Shop the latest trends" />
+      </Helmet>
       <section>
         <h1 className="text-4xl text-center text-purple-pink font-semibold mt-24 md:mt-44 mb-5">Checkout Success!</h1>
         <div className="flex justify-center">

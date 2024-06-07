@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Link, useParams } from "react-router-dom";
 import { Loader, ReviewCard } from "../../components/index";
 import { useFetch } from "../../hooks/useFetch";
@@ -10,6 +11,8 @@ export const ProductPage = () => {
 
   const { data, isLoading, hasError } = useFetch(apiUrl);
   const addToCart = useStore((state) => state.addToCart);
+
+  const product = data.find((item) => item.id === id);
 
   const [buttonText, setButtonText] = useState("Add to cart");
   const [buttonColor, setButtonColor] = useState("bg-gray-950");
@@ -41,8 +44,6 @@ export const ProductPage = () => {
   } else if (hasError) {
     content = <div>Error when trying to load the page</div>;
   } else {
-    const product = data.find((item) => item.id === id);
-
     if (!product) {
       content = <div>Product not found</div>;
     } else {
@@ -126,6 +127,10 @@ export const ProductPage = () => {
 
   return (
     <main className="flex flex-col flex-grow">
+      <Helmet>
+        <title>{product ? `${product.title} | Vivance` : "Loading..."}</title>
+        <meta name="description" content="Product details page for Vivance E-commerce shop" />
+      </Helmet>
       <section>{content}</section>
     </main>
   );

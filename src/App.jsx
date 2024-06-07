@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import "./App.css";
 import "./index.css";
 import { Layout } from "./components/Layout/index";
@@ -6,7 +7,7 @@ import { Home, ProductPage, Contact, ShoppingCart, CheckoutSuccessPage } from ".
 
 function App() {
   return (
-    <>
+    <HelmetProvider>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -16,7 +17,7 @@ function App() {
           <Route path="checkoutSuccessPage" element={<CheckoutSuccessPage />} />
         </Route>
       </Routes>
-    </>
+    </HelmetProvider>
   );
 }
 

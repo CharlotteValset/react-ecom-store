@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Link, useNavigate } from "react-router-dom";
 import { CartProduct } from "../../components/CartProduct";
 import { useStore } from "../../hooks/useStore";
@@ -31,6 +32,13 @@ export const ShoppingCart = () => {
 
   return (
     <main className="flex flex-col flex-grow">
+      <Helmet>
+        <title>Shopping Cart | Vivance</title>
+        <meta
+          name="description"
+          content="View your shopping cart at Vivance E-commerce store - Shop the latest trends"
+        />
+      </Helmet>
       <h1 className="text-4xl text-center text-purple-pink font-semibold mt-20 mb-8">Shopping cart</h1>
       {infoMessage && <InfoMessage message={infoMessage} />}
       <div className="flex flex-col flex-grow sm:flex-row sm:max-w-screen-lg sm:mx-auto sm:gap-20">

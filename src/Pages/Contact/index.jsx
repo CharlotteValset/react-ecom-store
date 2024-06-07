@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -34,6 +35,10 @@ export const Contact = () => {
 
   return (
     <main>
+      <Helmet>
+        <title>Contact us | Vivance</title>
+        <meta name="description" content="Contact page for Vivance E-commerce store" />
+      </Helmet>
       <h1 className="text-4xl text-center text-purple-pink font-semibold mt-24 mb-5">Contact us</h1>
       <p className="text-2xl text-gray-600 text-center font-light my-4 w-5/6 max-w-sm mx-auto">
         Please let us know if theres is anything we can help you with!

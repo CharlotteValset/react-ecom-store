@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Hero, SearchBar, ProductCard, Loader } from "../../components";
 import { useFetch } from "../../hooks/useFetch";
 import { apiUrl } from "../../common/constants";
@@ -34,6 +35,10 @@ export const Home = () => {
 
   return (
     <main>
+      <Helmet>
+        <title>Home | Vivance</title>
+        <meta name="description" content="Vivance E-commerce store - Shop the latest trends" />
+      </Helmet>
       <Hero />
       <SearchBar onSearch={handleSearch} searchResults={searchResults} />
       <div className="mt-10 flex flex-wrap gap-8 max-w-7xl mx-auto px-9">{content}</div>

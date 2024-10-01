@@ -20,7 +20,7 @@ I designed and developed a fully responsive website using Vite, Tailwind CSS and
 - Vite
 - Tailwind
 - React
-- [Noroff Rest API](https://docs.noroff.dev/docs/v2)
+- [Noroff Rest API](https://docs.noroff.dev/docs/v2/basic/online-shop)
 
 ### Project links
 

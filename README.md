@@ -4,6 +4,8 @@
 
 I am a front-end developer student at Noroff and a UX designer, please check out my JS framework assignment.
 
+![Screenshot of website](/src/assets/images/vivanceScreenshot.jpg)
+
 ## The Process
 
 I designed and developed a fully responsive website using Vite, Tailwind CSS and React. The website's data is fetched using Noroff´s Rest API.

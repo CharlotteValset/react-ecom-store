@@ -5,7 +5,7 @@ export const FooterNav = () => {
     <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
       <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
         © 2024{" "}
-        <a href="https://charlottevalset-portfolio.netlify.app/" className="hover:underline hover:text-pink-500">
+        <a href="https://charlottevalset.no/" className="hover:underline hover:text-pink-500">
           Designed and developed by Charlotte Valset
         </a>
       </span>

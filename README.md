@@ -4,7 +4,17 @@
 
 I am a front-end developer student at Noroff and a UX designer, please check out my JS framework assignment.
 
-![Screenshot of website](/src/assets/images/vivanceScreenshot.jpg)
+![Screenshot of website](/src/assets/images/vivance.jpg)
+
+## The assignment brief
+
+You are tasked with build out the following pages for an eCom store using React:
+
+- Homepage
+- Individual product page
+- Cart page
+- Checkout success page
+- Contact page
 
 ## The Process
 
